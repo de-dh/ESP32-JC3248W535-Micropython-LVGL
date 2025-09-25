@@ -2,6 +2,7 @@
 
 ## Description
 This repo is about running LVGL under MicroPython on the **JC3248W535** aka Cheap Black Display (CBD).
+The **JC3248W535** is like a more powerful version of the [Esp32-S2432028R aka Ceap Yellow Display](https://github.com/de-dh/ESP32-Cheap-Yellow-Display-Micropython-LVGL/tree/main).
 
 The firware was compiled from / includes:
 - [Kdschlosser's Micropython Bindings](https://github.com/lvgl-micropython/lvgl_micropython) - LVGL9 bindings for Micropython.
@@ -31,6 +32,11 @@ python -m esptool --chip esp32s3 --port COM7 -b 460800 --before default_reset --
 
 ## Using The Onboard LiPo Charger
 
+> [!NOTE]
+> None of the shown modifications (yellow parts in the circuit diagramm) are neccessary to operate the LiPo charging circuit. 
+> It will work out of the box although the state of the battery can't be determined without the indicator LEDs **D1**–**D4**.
+> The additional components were added for convenient integration of the CBD in a case.
+
 The CBD has an onboard power management IC (**IP5306**) which allows the charging and discharging of LiPo batteries.
 A 3.7 V LiPo battery can be connected directly to the Cheap Black Display via the JST (2P 1.25 mm JST) terminal **P5**.
 Make sure the battery is attached with the correct polarity (my JST connection wires are colored the wrong way).
@@ -47,6 +53,16 @@ LEDs **D1**–**D4** indicate the charging level in 25% steps during charging vi
 For easier integration into a case, LEDs **D1**–**D4**, **SW2**, and **SW3** were mounted on the CBD board with long connecting wires.
 The CBD itself was installed in a small case that also houses the LiPo battery and includes an external reset button for convenient operation.
 
+The following figures show the circuit diagram of the charging circuit with added LEDs and switches and the positions of the **IP5306 IC**'s LED pins on the backside of the CBD.
+
+The circuit diagrams from the manufacturer's documentation suggest that IO5 is connected to the battery via a resistive divider as shown in the last figure below.
+This has yet to be tested but it might allow to read the battery voltage via ADC input.
+
+<img src="doc/LiPoCircuit.png" />
+
+<img src="doc/LiPoConnections.jpg" width="500" height="auto" />
+
+<img src="doc/LiPoIOConnection.png" />
 
 ## Sources
 
