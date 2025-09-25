@@ -2,7 +2,7 @@
 
 ## Description
 This repo is about running LVGL under MicroPython on the **JC3248W535** aka Cheap Black Display (CBD).
-The **JC3248W535** is like a more powerful version of the [Esp32-S2432028R aka Ceap Yellow Display](https://github.com/de-dh/ESP32-Cheap-Yellow-Display-Micropython-LVGL/tree/main).
+The **JC3248W535** is like a more powerful version of the [Esp32-S2432028R aka Cheap Yellow Display](https://github.com/de-dh/ESP32-Cheap-Yellow-Display-Micropython-LVGL/tree/main).
 
 The firware was compiled from / includes:
 - [Kdschlosser's Micropython Bindings](https://github.com/lvgl-micropython/lvgl_micropython) - LVGL9 bindings for Micropython.
