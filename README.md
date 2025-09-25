@@ -31,4 +31,24 @@ python -m esptool --chip esp32s3 --port COM7 -b 460800 --before default_reset --
 
 ## Using The Onboard LiPo Charger
 
-WIP
+The CBD has an onboard power management IC (**IP5306**) which allows the charging and discharging of LiPo batteries.
+A 3.7 V LiPo battery can be connected directly to the Cheap Black Display via the JST (2P 1.25 mm JST) terminal **P5**.
+Make sure the battery is attached with the correct polarity (my JST connection wires are colored the wrong way).
+
+**SW1** / **SW2** activate the battery interface when the CBD is not connected to another power source.
+If a sufficiently charged battery is attached to the board, pressing **SW1** / **SW2** will power it on.
+
+The **IP5306 IC** is designed for use in power banks. As a result, the battery interface automatically shuts down after a timeout if no current is being drawn.
+To turn off the display immediately in battery mode, the battery must be briefly disconnected from the circuit using **SW3**.
+Note that **SW3** is a normally closed switch.
+
+LEDs **D1**–**D4** indicate the charging level in 25% steps during charging via USB and during discharge when the device is operating on battery power.
+
+For easier integration into a case, LEDs **D1**–**D4**, **SW2**, and **SW3** were mounted on the CBD board with long connecting wires.
+The CBD itself was installed in a small case that also houses the LiPo battery and includes an external reset button for convenient operation.
+
+
+## Sources
+
+- [JC3248W535EN Charging Circuit](https://github.com/NorthernMan54/JC3248W535EN/blob/main/JC3248W535EN/5-IO%20pin%20distribution/JC3248W535-2.png), accessed on 27.09.25
+- [IP5306 Datasheet](https://www.kynix.com/editor_u/pdf/20220117/IP5306.pdf), accessed on 27.09.25
