@@ -33,6 +33,10 @@ python -m esptool --chip esp32s3 --port COM7 -b 460800 --before default_reset --
 2. Upload the `/lib` folder and the test programs `test_landscape_mode.py` and `test_portrait_mode.py` to the device.
 3. Run the test programs.
 
+## LVGL Examples
+
+Example programs can be found [here](https://github.com/de-dh/ESP32-Cheap-Yellow-Display-Micropython-LVGL/blob/main/LVGL9_EXAMPLES.md).
+
 ## Screenshots
 
 Screenshots of the LVGL screens can be saved using [this program](https://github.com/de-dh/ESP32-Cheap-Yellow-Display-Micropython-LVGL/blob/main/LVGL9_SCREENSHOT.md).
