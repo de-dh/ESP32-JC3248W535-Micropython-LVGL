@@ -1,5 +1,7 @@
 > [!WARNING]
-> You must do hard-resets of your ESP32-JC3248W535 module after code changes. Soft resets may throw this error: `can't convert to module to int`.
+> You must do hard-resets of your CYD after running a program. Soft resets may throw this error: `can't convert to module to int`.
+>
+> **>>>>> This repo is not updated / maintained by me anymore since I lack the time. <<<<<**
 
 
 # ESP32-JC3248W535-Micropython-LVGL
